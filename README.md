@@ -62,6 +62,7 @@ Every meaningful change writes a dated context log. The next AI session — your
 | `/grill` | One batched multi-choice message before non-trivial work. Aligns intent in one round trip. |
 | `/diagnose` | Feedback-loop-first debugging. Build the loop, then fix the bug. |
 | `/zoom` | One-layer-up map of relevant modules + callers. Skip the deep dive. |
+| `/graphify` | Reads `graphify-out/` when present, or recommends official Graphify for larger-than-small codebases. |
 | `/prototype` | Throwaway code that answers ONE question. Deleted or absorbed when done. |
 | `/reboot-skills` | Re-asks the install questions, rewrites your defaults. |
 
@@ -98,6 +99,7 @@ LazySkills/
     ├── grill.md         ← /grill
     ├── diagnose.md      ← /diagnose
     ├── zoom-out.md      ← /zoom
+    ├── graphify.md      ← /graphify
     ├── prototype.md     ← /prototype
     ├── tests.md         ← test policy (read when relevant)
     ├── reboot.md        ← /reboot-skills

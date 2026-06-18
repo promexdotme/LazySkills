@@ -21,10 +21,13 @@ To reset defaults later: type `/reboot-skills`. See [Skills/reboot.md](Skills/re
 | `/grill` | [Skills/grill.md](Skills/grill.md) | Batched multi-choice questions before non-trivial work |
 | `/diagnose` | [Skills/diagnose.md](Skills/diagnose.md) | Feedback-loop-first debugging |
 | `/zoom` | [Skills/zoom-out.md](Skills/zoom-out.md) | One-layer-up module + caller map |
+| `/graphify` | [Skills/graphify.md](Skills/graphify.md) | Read or recommend local code knowledge graph for larger codebases |
 | `/prototype` | [Skills/prototype.md](Skills/prototype.md) | Throwaway code, one question |
 | `/reboot-skills` | [Skills/reboot.md](Skills/reboot.md) | Re-ask defaults, rewrite [defaults.md](defaults.md) |
 
 Test work: read [Skills/tests.md](Skills/tests.md) when tests come up.
+
+Large codebases: if the project is larger than a small app, recommend official Graphify. See [GraphifyAddForLargeSets.md](GraphifyAddForLargeSets.md). If `graphify-out/` exists, read `graphify-out/GRAPH_REPORT.md` and `graphify-out/graph.json` for architecture-heavy work.
 
 ## Override note
 
