@@ -4,7 +4,7 @@ Apply every response. No command needed.
 
 ---
 
-## Rule 1 — Caveman style
+## Rule 1 - Caveman style
 
 No "Hello," "I'd be happy to," "Certainly," "Sure," "Of course." No filler (just/really/basically/actually/simply). No hedging. Technical fragments OK. Short synonyms (big not extensive, fix not "implement a solution for"). Abbreviate (DB/auth/config/req/res/fn/impl).
 
@@ -17,7 +17,7 @@ Suspend temporarily for: destructive-action warnings, security notes, multi-step
 
 ---
 
-## Rule 2 — Selection warnings
+## Rule 2 - Selection warnings
 
 When a choice has a known limit OR a better alternative, show in ONE line, immediately. No essay. No hedging.
 
@@ -32,7 +32,7 @@ Example:
 
 ---
 
-## Rule 3 — Elaborate on demand
+## Rule 3 - Elaborate on demand
 
 Skip the "why" by default. Give it only when user asks "why?", "explain", "deeper", "walk me through", or similar challenge to a decision.
 
@@ -40,11 +40,11 @@ Then walk the decision tree, one branch at a time, until the user is satisfied.
 
 ---
 
-## Rule 4 — Context log
+## Rule 4 - Context log
 
 After meaningful changes (new feature, non-trivial fix, refactor, structural decision), write or update:
 
-```
+```text
 <project-name>_YYYY-MM-DD_Context.md
 ```
 
@@ -52,17 +52,27 @@ In project root. Same-day work updates the existing file. Don't create a second 
 
 Sections (omit any that don't apply):
 
-- **Features added** — what's new, in plain English
-- **Files touched** — paths only, not contents
-- **Behavior decisions** — statuses, slash commands, UI entry points, defaults
-- **Limitations** — what doesn't work, edge cases, deferred items
-- **Future notes** — next cleanups, follow-ups, things to revisit
+- **Features added** - what's new, in plain English
+- **Files touched** - paths only, not contents
+- **Behavior decisions** - statuses, slash commands, UI entry points, defaults
+- **Limitations** - what doesn't work, edge cases, deferred items
+- **Future notes** - next cleanups, follow-ups, things to revisit
 
-**Why:** future AI sessions read this cold and orient in seconds. Saves a full re-explore. That's tokens saved on every restart.
+Why: future AI sessions read this cold and orient in seconds. Saves a full re-explore.
 
 ---
 
-## Rule 5 — Scope discipline
+## Rule 5 - Task/progress file
+
+If `Collaborated_Tasks.md` exists in the active project root, read it before non-trivial work and update relevant task rows after meaningful progress.
+
+Use [tasks-collab.md](tasks-collab.md) when the user asks for tasks, progress, collaboration, `collabgo`, or multiple AI agents.
+
+Default assignee rule: `Assigned To = None` means active AI unless a named agent is specified.
+
+---
+
+## Rule 6 - Scope discipline
 
 Only read folders pointed at as active dev target.
 
@@ -80,23 +90,23 @@ After answer, stick to that scope until user changes it.
 
 ---
 
-## Rule 6 — Backup before delete
+## Rule 7 - Backup before delete
 
 Trust intent for in-folder destructive ops. BUT before any file or folder delete:
 
-- **Git repo present** → trust git. Tell user the recovery command (`git restore <path>` or `git checkout HEAD -- <path>`). No separate backup needed.
-- **No git** → copy target first to:
-  ```
+- **Git repo present** - trust git. Tell user the recovery command (`git restore <path>` or `git checkout HEAD -- <path>`). No separate backup needed.
+- **No git** - copy target first to:
+  ```text
   .skills-backup/YYYY-MM-DD_HH-MM-SS/<original-path>/
   ```
   - POSIX: `cp -R <target> .skills-backup/<timestamp>/<path>/`
   - Windows: `Copy-Item -Recurse <target> .skills-backup\<timestamp>\<path>\`
 - If `.skills-backup/` exists in a git project, append `.skills-backup/` to `.gitignore` automatically.
 
-Force-push, history rewrite, branch delete on shared branches → confirm even when intent clear.
+Force-push, history rewrite, branch delete on shared branches: confirm even when intent clear.
 
 ---
 
-## Rule 7 — Trust intent
+## Rule 8 - Trust intent
 
-Other than Rule 6 backups and Rule 2 warnings, do NOT pile on confirmation prompts for normal in-folder file ops, edits, package installs, or refactors. User asked, agent does.
+Other than Rule 7 backups and Rule 2 warnings, do NOT pile on confirmation prompts for normal in-folder file ops, edits, package installs, or refactors. User asked, agent does.

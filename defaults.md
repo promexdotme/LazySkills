@@ -40,13 +40,21 @@ Only load folders pointed at as active dev target. If ambiguous (monorepo, sibli
 
 After meaningful changes, write or update `<project-name>_YYYY-MM-DD_Context.md` in project root. Same-day work updates the existing file. Sections: features added, files touched, behavior decisions, limitations, future notes.
 
-## 7. Install location
+## 7. Tasks / collaboration
+
+If `Collaborated_Tasks.md` exists in the active project root, read it before non-trivial work and update relevant rows after meaningful progress.
+
+Default assignment: `Assigned To = None` means active AI unless a named agent is specified. Use `Codex`, `Gemini`, or `Claude` for specific agent assignments.
+
+Use `collabgo` or `collaboratewithotherai` for Lead/Follower multi-AI coordination. No overlapping edits unless Lead explicitly assigns them.
+
+## 8. Install location
 
 Local
 
 (Set during install / reboot. `Local` = LazySkills lives in this project. `Global` = lives in agent home and all projects pick it up.)
 
-## 8. Stack hints (optional)
+## 9. Stack hints (optional)
 
 Filled during install if user shared. Saves detection cycles.
 

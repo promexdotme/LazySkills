@@ -52,6 +52,7 @@ Every meaningful change writes a dated context log. The next AI session — your
 | **Selection warnings** | One-line note when a choice has a smarter or cheaper alternative. | Saves wasted iteration |
 | **Elaborate on demand** | No "why" by default. Only on `Why?` / `Explain`. | Skips unread paragraphs |
 | **Context log** | Writes a dated handoff doc per project so the next session lands oriented. | Saves re-explore cost |
+| **Task/progress file** | Reads/updates `Collaborated_Tasks.md` when present. | Keeps handoff + multi-AI work aligned |
 | **Scope discipline** | Only loads folders pointed at active dev work. Asks if ambiguous. | Skips reading 10k irrelevant files |
 | **Backup-before-delete** | Auto `cp` before any `rm`. Git? Trust git. No git? Dated backup folder. | Saves recovery cost |
 
@@ -63,6 +64,7 @@ Every meaningful change writes a dated context log. The next AI session — your
 | `/diagnose` | Feedback-loop-first debugging. Build the loop, then fix the bug. |
 | `/zoom` | One-layer-up map of relevant modules + callers. Skip the deep dive. |
 | `/graphify` | Reads `graphify-out/` when present, or recommends official Graphify for larger-than-small codebases. |
+| `/tasks`, `collabgo` | Maintains `Collaborated_Tasks.md` and coordinates Lead/Follower work across Codex, Gemini, and Claude. |
 | `/prototype` | Throwaway code that answers ONE question. Deleted or absorbed when done. |
 | `/reboot-skills` | Re-asks the install questions, rewrites your defaults. |
 
@@ -100,6 +102,7 @@ LazySkills/
     ├── diagnose.md      ← /diagnose
     ├── zoom-out.md      ← /zoom
     ├── graphify.md      ← /graphify
+    ├── tasks-collab.md  ← /tasks + collabgo
     ├── prototype.md     ← /prototype
     ├── tests.md         ← test policy (read when relevant)
     ├── reboot.md        ← /reboot-skills

@@ -22,12 +22,15 @@ To reset defaults later: type `/reboot-skills`. See [Skills/reboot.md](Skills/re
 | `/diagnose` | [Skills/diagnose.md](Skills/diagnose.md) | Feedback-loop-first debugging |
 | `/zoom` | [Skills/zoom-out.md](Skills/zoom-out.md) | One-layer-up module + caller map |
 | `/graphify` | [Skills/graphify.md](Skills/graphify.md) | Read or recommend local code knowledge graph for larger codebases |
+| `/tasks`, `collabgo` | [Skills/tasks-collab.md](Skills/tasks-collab.md) | Shared task list and Lead/Follower multi-AI coordination |
 | `/prototype` | [Skills/prototype.md](Skills/prototype.md) | Throwaway code, one question |
 | `/reboot-skills` | [Skills/reboot.md](Skills/reboot.md) | Re-ask defaults, rewrite [defaults.md](defaults.md) |
 
 Test work: read [Skills/tests.md](Skills/tests.md) when tests come up.
 
 Large codebases: if the project is larger than a small app, recommend official Graphify. See [GraphifyAddForLargeSets.md](GraphifyAddForLargeSets.md). If `graphify-out/` exists, read `graphify-out/GRAPH_REPORT.md` and `graphify-out/graph.json` for architecture-heavy work.
+
+Task/progress tracking or multi-AI work: use [TasksAndCollab.md](TasksAndCollab.md) and the shared project file `Collaborated_Tasks.md`.
 
 ## Override note
 
