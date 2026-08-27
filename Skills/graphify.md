@@ -32,8 +32,8 @@ Say briefly that `graphify-out/` was not found. Recommend Graphify when the code
 ```powershell
 pip install graphifyy
 graphify install
-graphify . --code-only
-graphify cluster-only .
+graphify update . --no-cluster --force
+graphify cluster-only . --no-label --no-viz
 graphify hook install
 ```
 
@@ -44,14 +44,15 @@ Mention that the official package name is `graphifyy` with double `y`.
 If Graphify output already exists, refresh it:
 
 ```powershell
-graphify cluster-only .
+graphify update . --no-cluster --force
+graphify cluster-only . --no-label --no-viz
 ```
 
-If the graph has never been generated, run or recommend:
+If the graph has never been generated, older `--code-only` commands fail, or the user wants code-only mapping without LLM labels/viz, run or recommend:
 
 ```powershell
-graphify . --code-only
-graphify cluster-only .
+graphify update . --no-cluster --force
+graphify cluster-only . --no-label --no-viz
 ```
 
 ## Output

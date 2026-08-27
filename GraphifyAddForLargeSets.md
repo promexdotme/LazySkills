@@ -128,27 +128,36 @@ Do not store fake keys in `.env` or commit them.
 ### 4. Build the Code Graph
 
 ```powershell
-graphify . --code-only
+graphify update . --no-cluster --force
 ```
 
-If `--code-only` still triggers blockers because of remaining config/document files, run this while the temporary fake key is active:
+This updates code graph data without clustering yet.
+
+If an older guide or agent suggests `graphify . --code-only`, do not use it on current Graphify versions. Use the two-command code-focused flow in this guide instead.
+
+### 5. Cluster Without LLM Labels or Viz
 
 ```powershell
-graphify .
+graphify cluster-only . --no-label --no-viz
 ```
 
-### 5. Cluster and Generate Reports
-
-```powershell
-graphify cluster-only .
-```
+This clusters the code graph while skipping LLM labeling and visualization.
 
 Output should appear in `graphify-out/`, especially:
 
 - `graphify-out/graph.json`
 - `graphify-out/GRAPH_REPORT.md`
 
-### 6. Install Git Hooks
+### 6. If Previous Commands Fail
+
+Use these two commands as the preferred fallback when old commands fail, when you want code-only mapping, or when you want to avoid LLM labeling:
+
+```powershell
+graphify update . --no-cluster --force
+graphify cluster-only . --no-label --no-viz
+```
+
+### 7. Install Git Hooks
 
 ```powershell
 graphify hook install
@@ -178,10 +187,11 @@ When the user types `/graphify` or asks about Graphify:
 4. If the user asks to update Graphify, run or recommend:
 
 ```powershell
-graphify cluster-only .
+graphify update . --no-cluster --force
+graphify cluster-only . --no-label --no-viz
 ```
 
-Use `graphify . --code-only` first when the code graph has never been generated.
+Use this two-command flow when the graph has never been generated or when older commands fail.
 
 ## Troubleshooting
 
@@ -194,5 +204,6 @@ Get-ChildItem -Recurse -File | Where-Object { $_.FullName -notmatch "node_module
 Force a structural refresh after large folder or framework changes:
 
 ```powershell
-graphify cluster-only .
+graphify update . --no-cluster --force
+graphify cluster-only . --no-label --no-viz
 ```
